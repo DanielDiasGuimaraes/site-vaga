@@ -8,7 +8,7 @@ function enviarFormulario() {
     curriculo: document.getElementById("curriculo").value
   };
 
-  fetch("https://vagas-q7sc.onrender.com/enviar", {
+  fetch("https://vagas-80nu.onrender.com/enviar", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(dados)
