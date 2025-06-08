@@ -1,58 +1,113 @@
 body {
   margin: 0;
-  background-color: #000;
-  color: #000;
-  font-family: Arial, sans-serif;
-}
-.main {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.form {
-  width: 500px;
   padding: 20px;
-  background-color: azure;
-  border: 2px solid #ccc;
-  border-radius: 10px;
 }
+
+.main {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  animation: fadeIn 0.8s ease forwards;
+}
+
 .titulo {
-  background-color: rgb(236, 209, 209);
-  padding: 15px;
+  background-color: #764ba2;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(118,75,162,0.4);
 }
+
 .form label {
   display: block;
-  margin-top: 10px;
-  font-weight: bold;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+  font-size: 1rem;
 }
-.form input, .form textarea {
+
+.form input, 
+.form textarea {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 4px;
-  border: 1px solid #aaa;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1.8px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.4s ease;
+  box-sizing: border-box;
 }
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #764ba2;
+  outline: none;
+  box-shadow: 0 0 12px 3px rgba(118,75,162,0.5);
+}
+
 .form button {
-  margin-top: 20px;
-  padding: 10px;
   width: 100%;
-  background-color: #28a745;
+  padding: 14px 0;
+  background-color: #764ba2;
   color: white;
-  font-size: 16px;
+  font-size: 1.2rem;
+  font-weight: 700;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0 5px 15px rgba(118,75,162,0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: buttonEntrance 0.8s ease forwards;
 }
+
 .form button:hover {
-  background-color: #218838;
+  background-color: #5a3580;
+  box-shadow: 0 8px 25px rgba(90,53,128,0.8);
+  animation: bounce 0.4s ease;
 }
+
 #mensagem {
   margin-top: 15px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  min-height: 24px;
+  opacity: 0;
+  animation: fadeInMessage 1s ease forwards;
+}
+
+/* Animações */
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes buttonEntrance {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-6px);}
+}
+
+@keyframes fadeInMessage {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
